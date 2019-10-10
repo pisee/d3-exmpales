@@ -1,0 +1,60 @@
+var d3 = require("d3");
+axios = require("axios");
+
+var svg = d3.select("#myGraph").append("svg")
+
+svg.append("rect")
+    .attr("x", 10)
+    .attr("y", 10)
+    .attr("width", 200)
+    .attr("height", 30)
+    
+svg.append("rect")
+    .attr("x", 10)
+    .attr("y", 45)
+    .attr("width", 30)
+    .attr("height", 30)
+    .transition()
+    .duration(3000)
+    .attr("width", 500)
+    .style("fill", "red")
+    
+svg.append("circle")
+    .attr("cx", 150)
+    .attr("cy", 180)
+    .attr("r", 100)
+    
+svg.append("circle")
+    .attr("cx", 150)
+    .attr("cy", 180)
+    .attr("r", 100)
+    .style("fill", "aqua")
+    .transition()
+    .duration(3000)
+    .attr("r", 50)
+    .attr("transform", "translate(250, 0)")
+    .style("fill", "indigo")
+
+svg.append("path")
+    .attr("d","M10,275 L220,475 L280,350")
+    
+svg.append("path")
+    .attr("d","M300,275 L520,475 L580,350")
+    .style("fill", "gray")
+    .transition()
+    .duration(3000)
+    .attr("transform", "rotate(90,580,350)")
+    .style("fill", "yellow")
+    
+svg.append("path")
+    .attr("d","M10,575 C80,300 120,500 250,575")
+    .style("fill", "green")
+    
+svg.append("path")
+    .attr("d","M10,575 C80,300 120,500 250,575")
+    .style("fill", "yellow")
+    .transition()
+    .duration(3000)
+    .attr("transform", "translate(230, -287) scale(2,1.5)")
+    .attr("d","M10,575 C80,300 120,500 280,575")
+    .style("fill", "pink")
